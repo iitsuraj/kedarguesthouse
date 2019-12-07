@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kedar guest house</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/panel/assets/css/material-dashboard.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <% include ./panel/sidebar %>
+        <div class="main-panel">
+            <% include ./panel/navbar %>
+            <div class="content">
+                <div class="container-fluid">
+                    <%- body -%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/panel/assets/js/core/jquery.min.js"></script>
+    <script src="/panel/assets/js/core/popper.min.js"></script>
+    <script src="/panel/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.material.min.js"></script>
+    <script src="/panel/assets/js/core/bootstrap-material-design.min.js"></script>
+    <script src="/panel/assets/js/material-dashboard.min.js"></script>
+</body>
+
+</html>

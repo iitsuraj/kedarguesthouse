@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-7 mb-5 mb-lg-0">
-                <img src="/img/backgrounds/img-1.jpg" class="w-100 img-responsive" alt="">
+                <img src="/uploads/<%=img%>" class="w-100 img-responsive" alt="">
                 <article>
                     <h5>Description</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -24,42 +24,43 @@
                 <div data-toggle="sticky" data-sticky-offset="130" class="">
                     <div class="card">
                         <div class="card-body">
-                            <form class="needs-validation" novalidate>
+                            <form class="needs-validation" method="POST" autocomplete="off">
                                 <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationCustom01">Check in</label>
-                                        <input type="text" class="form-control" id="validationCustom01"
-                                            placeholder="First name" value="Mark" required>
+                                    <div class="input-daterange">
+                                        <div class="col-md-12 mb-1">
+                                            <label for="startDate">Check In</label>
+                                            <input type="text" name="checkin" placeholder="MM/DD/YYYY"
+                                                class="form-control" required />
 
+                                        </div>
+                                        <div class="col-md-12 mb-1">
+                                            <label for="endDate">Check Out</label>
+                                            <input type="text" name="checkout" placeholder="MM/DD/YYYY"
+                                                class="form-control" required />
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationCustom01">Check out</label>
-                                        <input type="text" class="form-control" id="validationCustom01"
-                                            placeholder="First name" value="Mark" required>
-
-                                    </div>
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-6 mb-1">
                                         <label for="validationCustom01">First Name</label>
                                         <input type="text" class="form-control" id="validationCustom01"
-                                            placeholder="First name" value="Mark" required>
+                                            placeholder="First name" name="name" required>
 
                                     </div>
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-6 mb-1">
                                         <label for="validationCustom01">Last Name</label>
                                         <input type="text" class="form-control" id="validationCustom01"
-                                            placeholder="First name" value="Mark" required>
+                                            placeholder="Last name" name="lastname" required>
 
                                     </div>
-                                    <div class="col-md-12 mb-3">
+                                    <div class="col-md-12 mb-1">
                                         <label for="validationCustom01">Mobile Number</label>
-                                        <input type="text" class="form-control" id="validationCustom01"
-                                            placeholder="First name" value="Mark" required>
+                                        <input type="tel" class="form-control" id="validationCustom01"
+                                            placeholder="Mobile Number" forma name="mobilenumber" required>
 
                                     </div>
-                                    <div class="col-md-12 mb-3">
+                                    <div class="col-md-12 mb-1">
                                         <label for="validationCustom01">Email</label>
-                                        <input type="text" class="form-control" id="validationCustom01"
-                                            placeholder="First name" value="Mark" required>
+                                        <input type="email" class="form-control" id="validationCustom01"
+                                            placeholder="Email" name="email" required>
 
                                     </div>
 

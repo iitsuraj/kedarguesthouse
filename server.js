@@ -13,18 +13,20 @@ var secret = require("./config/secret");
 var passportConf = require("./config/passport");
 var csurf = require("csurf");
 var compression = require("compression");
-var subdomain = require("express-subdomain");
 var helmet = require("helmet");
+var Info = require("./models/info");
 var csrfMiddleware = csurf({
   cookie: true
 });
 
-// mongoose.connect(secret, {useNewUrlParser: true}).then(()=>{
-//   console.log('Connected to database!');
-// })
-// .catch(() => {
-//   console.log('Connection failed!');
-// });
+mongoose
+  .connect(secret.database, { useNewUrlParser: true })
+  .then(() => {
+    console.log("Connected to database!");
+  })
+  .catch(() => {
+    console.log("Connection failed!");
+  });
 var app = express();
 
 function wwwRedirect(req, res, next) {
@@ -48,6 +50,8 @@ app.use(
 );
 var oneYear = 1 * 365 * 24 * 60 * 60 * 1000;
 app.use(express.static(__dirname + "/public", { maxAge: oneYear }));
+app.use(express.static(__dirname + "/uploads", { maxAge: oneYear }));
+
 app.use("/uploads", express.static("uploads"));
 app.use(helmet());
 app.use(morgan("dev"));
@@ -69,6 +73,15 @@ app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
 });
+app.use(function(req, res, next) {
+  Info.findOne({})
+    .sort({ createdAt: -1 })
+    .exec(function(err, info) {
+      if (err) return next(err);
+      res.locals.info = info;
+      next();
+    });
+});
 app.engine("ejs", engine);
 
 app.set("view engine", "ejs");
@@ -79,8 +92,12 @@ app.set("view engine", "ejs");
 // routes
 var main = require("./routes/main");
 app.use(main);
+var panel = require("./routes/panel");
+app.use("/panel", passportConf.isAuthenticated, panel);
+var account = require("./routes/account");
+app.use("/", account);
 
-app.listen(process.env.PORT || 3000, function(err) {
+app.listen(process.env.PORT || 4444, function(err) {
   if (err) throw err;
-  console.log("server is running on port " + 3000);
+  console.log("server is running on port " + 4444);
 });

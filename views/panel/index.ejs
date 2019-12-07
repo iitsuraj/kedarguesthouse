@@ -1,0 +1,99 @@
+<% layout('panel') -%>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Add Rooms</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Type</label>
+                                <input type="text" class="form-control" name="type">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Price</label>
+                                <input type="number" class="form-control" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group form-file-upload form-file-simple">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Simple chooser..."
+                                    onclick="(function (){
+                                        $('#roomimg').click();
+                                        return false;
+                                    })();return false;">
+                                <input type="file" class="inputFileHidden" accept="image/*" name="productImage"
+                                    id="roomimg">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Submit<div class="ripple-container"></div>
+                    </button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Latest Rooms added</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-shopping">
+                        <thead class=" text-primary">
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Image
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Price
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            <% for(var i =0 ; i< rooms.length; i++){%>
+                            <tr>
+                                <td>
+                                    <%= i+1%>
+                                </td>
+                                <td>
+                                    <div class="img-container">
+                                        <img src="/uploads/<%= rooms[i].image %>" alt="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <%= rooms[i].type%>
+                                </td>
+                                <td>
+                                    <%= rooms[i].price%>
+                                </td>
+                                <td>
+                                    <a href="/panel/room/<%=rooms[i]._id%>"><i class="material-icons">delete</i></a>
+                                </td>
+                            </tr>
+
+                            <%}%>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

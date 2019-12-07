@@ -1,5 +1,5 @@
 module.exports = {
-    service: 'gmail',
-    mailUserName : 'coder.start.saini@gmail.com',
-    mailPassword: 'Ss@9928466181'
+  service: "gmail",
+  mailUserName: "surajyee1212banti@gmail.com",
+  mailPassword: "lhiirngokovocyvt"
 };

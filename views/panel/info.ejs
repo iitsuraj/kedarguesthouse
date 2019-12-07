@@ -1,0 +1,41 @@
+<% layout('panel') -%>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Add Info</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Info</label>
+                                <input type="text" class="form-control" name="info">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Video</label>
+                                <input type="text" class="form-control" name="video">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group form-file-upload form-file-simple bmd-form-group">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Image..." onclick="(function (){
+                                        $('#image').click();
+                                        return false;
+                                    })();return false;">
+                                <input type="file" class="inputFileHidden" accept="image/*" name="image" id="image">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Submit<div class="ripple-container"></div>
+                    </button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

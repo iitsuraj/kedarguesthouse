@@ -1,0 +1,72 @@
+<% layout('panel') -%>
+<div class="row justify-content-end">
+    <div class="col-md-3">
+        <a href="/panel/booking/all.csv" class="btn btn-primary">All Booking</a>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Latest Review</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Phone
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Room
+                            </th>
+                            <th>
+                                Check In
+                            </th>
+                            <th>
+                                Check Out
+                            </th>
+                        </thead>
+                        <tbody>
+                            <% for(var i =0; i<bookings.length; i++){%>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= bookings[i].firstname %>
+                                </td>
+                                <td>
+                                    <%= bookings[i].mobilenumber %>
+                                </td>
+                                <td>
+                                    <%= bookings[i].email %>
+                                </td>
+                                <td>
+                                    <%= bookings[i].room.type %>
+                                </td>
+                                <td>
+                                    <%= moment(bookings[i].checkin).format('DD/MM/YYYY')  %>
+                                </td>
+                                <td>
+                                    <%= moment(bookings[i].checkout).format('DD/MM/YYYY')  %>
+                                </td>
+                            </tr>
+                            <%}%>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

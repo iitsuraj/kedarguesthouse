@@ -14,8 +14,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-6">
+            <div class="col-xl-12">
                 <div id="accordion-1" class="accordion accordion-spaced">
+                    <%for(var i=0; i< faqs.length; i++){%>
                     <div class="card">
                         <div class="card-header py-4 collapsed" id="heading-1-1" data-toggle="collapse" role="button"
                             data-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
@@ -24,124 +25,16 @@
                                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-file mr-3">
                                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                                     <polyline points="13 2 13 9 20 9"></polyline>
-                                </svg>Which license do I need?</h6>
+                                </svg><%= faqs[i].question%></h6>
                         </div>
                         <div id="collapse-1-1" class="collapse" aria-labelledby="heading-1-1"
                             data-parent="#accordion-1">
                             <div class="card-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
-                                    bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                                <p><%= faqs[i].answer%></p>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header py-4" id="heading-1-2" data-toggle="collapse" role="button"
-                            data-target="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-unlock mr-3">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                    <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
-                                </svg>How do I get access to a theme?</h6>
-                        </div>
-                        <div id="collapse-1-2" class="collapse" aria-labelledby="heading-1-2"
-                            data-parent="#accordion-1">
-                            <div class="card-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
-                                    bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header py-4" id="heading-1-3" data-toggle="collapse" role="button"
-                            data-target="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder mr-3">
-                                    <path
-                                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
-                                    </path>
-                                </svg>How do I see previous orders?</h6>
-                        </div>
-                        <div id="collapse-1-3" class="collapse" aria-labelledby="heading-1-3"
-                            data-parent="#accordion-1">
-                            <div class="card-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
-                                    bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div id="accordion-2" class="accordion accordion-spaced">
-                    <div class="card">
-                        <div class="card-header py-4" id="heading-2-1" data-toggle="collapse" role="button"
-                            data-target="#collapse-2-1" aria-expanded="false" aria-controls="collapse-2-1">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-file mr-3">
-                                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                                    <polyline points="13 2 13 9 20 9"></polyline>
-                                </svg>Which license do I need?</h6>
-                        </div>
-                        <div id="collapse-2-1" class="collapse" aria-labelledby="heading-2-1"
-                            data-parent="#accordion-2">
-                            <div class="card-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
-                                    bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header py-4" id="heading-2-2" data-toggle="collapse" role="button"
-                            data-target="#collapse-2-2" aria-expanded="false" aria-controls="collapse-2-2">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-unlock mr-3">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                    <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
-                                </svg>How do I get access to a theme?</h6>
-                        </div>
-                        <div id="collapse-2-2" class="collapse" aria-labelledby="heading-2-2"
-                            data-parent="#accordion-2">
-                            <div class="card-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
-                                    bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header py-4" id="heading-2-3" data-toggle="collapse" role="button"
-                            data-target="#collapse-2-3" aria-expanded="false" aria-controls="collapse-2-3">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder mr-3">
-                                    <path
-                                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
-                                    </path>
-                                </svg>How do I see previous orders?</h6>
-                        </div>
-                        <div id="collapse-2-3" class="collapse" aria-labelledby="heading-2-3"
-                            data-parent="#accordion-2">
-                            <div class="card-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                    truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
-                                    bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <%}%>
                 </div>
             </div>
         </div>

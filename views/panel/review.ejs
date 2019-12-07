@@ -1,0 +1,67 @@
+<% layout('panel') -%>
+<div class="row justify-content-end">
+    <div class="col-md-3">
+        <a href="/panel/review/all.csv" class="btn btn-primary">All Review</a>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Latest Review</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Review
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Show
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            <% for(var i =0; i<reviews.length; i++){%>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= reviews[i].name %>
+                                </td>
+                                <td>
+                                    <%= reviews[i].comment %>
+                                </td>
+                                <td>
+                                    <%= reviews[i].email %>
+                                </td>
+                                <td>
+                                    <%= reviews[i].home %>
+                                </td>
+                                <td>
+                                    <a href="/panel/review/<%=reviews[i]._id%>"><i
+                                            class="material-icons">remove_red_eye</i></a>
+                                </td>
+                            </tr>
+                            <%}%>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

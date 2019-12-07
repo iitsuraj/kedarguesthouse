@@ -1,0 +1,81 @@
+<% layout('panel') -%>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Add Faq</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Question</label>
+                                <input type="text" class="form-control" name="question">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Answer</label>
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Write your answer here.</label>
+                                    <textarea class="form-control" rows="3" name="answer"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Submit<div class="ripple-container"></div>
+                    </button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Latest Faq added</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Question
+                            </th>
+                            <th>
+                                Answer
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            <% for(var i =0; i<faqs.length; i++){ %>
+                            <tr>
+                                <td>
+                                    <%= i+1%>
+                                </td>
+                                <td>
+                                    <%= faqs[i].question%>
+                                </td>
+                                <td>
+                                    <%= faqs[i].answer%>
+                                </td>
+                                <td>
+                                    <a href="/panel/faq/<%=faqs[i]._id%>"><i class="material-icons">delete</i></a>
+                                </td>
+                            </tr>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
