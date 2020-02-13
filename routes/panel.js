@@ -68,7 +68,7 @@ router.post("/info", upload.single("image"), function(req, res, next) {
   var info = new Info();
   info.info = req.body.info;
   info.video = req.body.video;
-  info.image = req.body.image;
+  info.image = req.file.originalname;
   info.save(function(err) {
     if (err) return next(err);
     res.redirect("/panel/info");

@@ -85,7 +85,7 @@ app.use(function(req, res, next) {
 app.engine("ejs", engine);
 
 app.set("view engine", "ejs");
-// app.set('view cache', true);
+app.set("view cache", true);
 
 // app.use(csrfMiddleware);
 
@@ -96,8 +96,11 @@ var panel = require("./routes/panel");
 app.use("/panel", passportConf.isAuthenticated, panel);
 var account = require("./routes/account");
 app.use("/", account);
+app.get("*", function(req, res) {
+  res.redirect("/404");
+});
 
-app.listen(process.env.PORT || 4444, function(err) {
+app.listen(process.env.PORT || 3000, function(err) {
   if (err) throw err;
-  console.log("server is running on port " + 4444);
+  console.log("server is running on port " + 3000);
 });

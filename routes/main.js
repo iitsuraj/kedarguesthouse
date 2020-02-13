@@ -136,7 +136,7 @@ router.get("/payresiveguestkedar/", function(req, res, next) {
           var htmlToSend = template(replacements);
           var to = ["vk@kedarguesthouse.com", save.email];
           mailer.sendEmail(
-            "surajyee1212banti@gmail.com",
+            "kedarguesthouse@gmail.com",
             to,
             "Welcome in kedar guest house",
             htmlToSend
